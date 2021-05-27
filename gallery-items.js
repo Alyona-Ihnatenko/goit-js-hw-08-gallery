@@ -1,5 +1,5 @@
 
-const images= [
+export default [
     {
       preview:
         'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg',
@@ -71,38 +71,7 @@ const images= [
 //   btn: document.querySelector('[data-action="close-lightbox"]')
 // };
 
-const gallery=document.querySelector('.js-gallery');
-const lightImage=document.querySelector('.lightbox__image');
-const modalLightBox=document.querySelector('.js-lightbox');
-  gallery.insertAdjacentHTML('afterbegin',createGallery(images));
-const CloseBtn=document.querySelector("button[data-action='close-lightbox']");
 
-
-  function createGallery(images){
-      return images.map(({preview, original,description})=>{
-          return `<li class="gallery__item" ><a class="gallery__link " href="${original}"><img class="gallery__image" src="${preview}" alt="${description}" data-source="${original}"></a></li>`;
-      }).join("");
-  }
-   
-gallery.addEventListener('click',OnClickImg);
-CloseBtn.addEventListener('click',onClickCloseModal);
-
-function OnClickImg(event){
-  event.preventDefault();
-  if(event.target.nodeName!=='IMG'){
-    return;
-  }
-const imgEl=event.target;
- lightImage.src=imgEl.dataset.source;
- lightImage.alt=imgEl.alt;
- modalLightBox.classList.add('is-open');
-
-}
-function onClickCloseModal(){
-  modalLightBox.classList.remove('is-open');
-
-
-}
 
 // const createImage = (item, parent) => {
 //   const { preview, original, description } = item;
