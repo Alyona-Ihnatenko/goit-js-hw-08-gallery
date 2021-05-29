@@ -1,4 +1,4 @@
-import images from "/gallery-items.js";
+import images from "./gallery-items.js";
 
 const gallery=document.querySelector('.js-gallery');
 const lightImage=document.querySelector('.lightbox__image');
